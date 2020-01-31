@@ -4,32 +4,31 @@ https://saulocastillos.github...
 
 ## 1. Como rodar localmente?
 
-#### Entre no prompt de comando ou terminal e navegue até a pasta desejada.
+#### 1.1 Entre no prompt de comando ou terminal e navegue até a pasta desejada.
 
-#### Clone o repositório digitando o seguinte comando:
+#### 1.2 Clone o repositório digitando o seguinte comando:
 
   git clone "https://github.com/saulocastillos/weather.git"
 
-#### Entre na pasta weather:
+#### 1.3 Entre na pasta weather:
 
   cd weather
 
-#### Edite o arquivo .env na raiz do projeto, adicionando a key gerada em https://api.openweathermap.org
+#### 1.4 Edite o arquivo .env na raiz do projeto, adicionando a sua key.
+##### 1.4.1 Substitua o texto YOUR_KEY pala sua chave em https://api.openweathermap.org
 
-##### O arquivo vai ficar assim
+  REACT_APP_KEY=YOUR_KEY
 
-  REACT_APP_KEY=PASTE_YOUR_KEY_HERE
-
-#### Rode o yarn:
+#### 1.5 Rode o yarn:
 
   yarn
 
-#### Pronto, basta executar o seguinte comando:
+#### 1.6 Pronto, basta executar o seguinte comando:
 
   yarn start
 
 ## 2 .Como fazer o deploy?
 
-#### Depois de seguir o passso 1 (como rodar o projeto localmente), execute o seguinte comando no terminal dentro da pasta raiz do projeto:
+#### 2.1 Depois de seguir o passso 1 (como rodar o projeto localmente), execute o seguinte comando no terminal dentro da pasta raiz do projeto:
 
   yarn run deploy
