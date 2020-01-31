@@ -15,7 +15,7 @@ https://saulocastillos.github...
   cd weather
 
 #### 1.4 Edite o arquivo .env na raiz do projeto, adicionando a sua key.
-##### 1.4.1 Substitua o texto YOUR_KEY pala sua chave em https://api.openweathermap.org
+##### 1.4.1 Substitua o texto YOUR_KEY por sua chave, gerada em https://api.openweathermap.org
 
   REACT_APP_KEY=YOUR_KEY
 
