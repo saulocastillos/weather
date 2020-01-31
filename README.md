@@ -18,7 +18,7 @@ https://saulocastillos.github...
 
 ##### O arquivo vai ficar assim
 
-  REACT_APP_KEY=78144cbaa0439c70d1ec3f8f95037759
+  REACT_APP_KEY=PASTE_YOUR_KEY_HERE
 
 #### Rode o yarn:
 
