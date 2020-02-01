@@ -16,6 +16,7 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState("");
+  const [city, setCity] = useState("");
 
   async function fetchAPI() {
     await fetch(`${api.base}weather?q=${query || location}&units=metric&APPID=${api.key}`)
@@ -35,7 +36,7 @@ function App() {
       const response = await axios.get(`https://geolocation-db.com/jsonp/`);
       const data = await JSON.parse(response.data.replace("callback(","").replace(")",""));
       setLocation(`${data.city}, ${data.country_name}`)
-      setQuery(location);
+      setCity(data.city);
     } 
     search();
   },[location])
@@ -54,7 +55,7 @@ function App() {
           location={location}
           fetchAPI={fetchAPI}
         />
-        <ButtonBox handleClick={e => handleClick()}/>
+        <ButtonBox handleClick={e => handleClick()}>Whats {city} temperature?</ButtonBox>  
         {(typeof weather.main != "undefined") ? (
           <>
             <LocalizationBox 
@@ -64,7 +65,7 @@ function App() {
               weather={weather}
             />
           </>
-          ):(<></>)}       
+          ):(<></>)}     
       </main>
     </div>
   );
