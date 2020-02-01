@@ -2,6 +2,8 @@
 
 https://saulocastillos.github...
 
+![alt text](./src/assets/cold-bg.jpg)
+
 ## 1. Como rodar localmente?
 
 #### 1.1 Entre no prompt de comando ou terminal e navegue até a pasta desejada.
