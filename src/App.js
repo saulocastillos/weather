@@ -1,20 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
+import axios from 'axios';
+
+import api from './config/api'
+
+import ButtonBox from './components/organisms/ButtonBox';
 import WeatherBox from './components/organisms/WeatherBox';
 import LocalizationBox from './components/organisms/LocalizationBox';
 import SearchBox from './components/organisms/SearchBox';
 
 require('dotenv').config();
 
-const api = {
-  key: process.env.local ? process.env.local.REACT_APP_KEY : process.env.REACT_APP_KEY,
-  base: 'https://api.openweathermap.org/data/2.5/'
-}
-
 function App() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [location, setLocation] = useState("");
+
+  async function fetchAPI() {
+    await fetch(`${api.base}weather?q=${query || location}&units=metric&APPID=${api.key}`)
+            .then(res => res.json())
+            .then(result => {
+              setWeather(result);
+              setQuery('');
+            });
+  }
+
+  function handleClick() {
+    fetchAPI();
+  }
+
+  useEffect(()=>{
+    async function search() {
+      const response = await axios.get(`https://geolocation-db.com/jsonp/`);
+      const data = await JSON.parse(response.data.replace("callback(","").replace(")",""));
+      setLocation(`${data.city}, ${data.country_name}`)
+      setQuery(location);
+    } 
+    search();
+  },[location])
 
   return (
     <div className={(typeof weather.main != "undefined") 
@@ -27,7 +51,10 @@ function App() {
           query={query}
           api={api}
           setWeather={setWeather}
+          location={location}
+          fetchAPI={fetchAPI}
         />
+        <ButtonBox handleClick={e => handleClick()}/>
         {(typeof weather.main != "undefined") ? (
           <>
             <LocalizationBox 
