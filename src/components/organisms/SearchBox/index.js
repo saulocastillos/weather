@@ -2,19 +2,14 @@ import React from 'react';
 
 import { Container, Input } from './styles';
 
-export default function SearchBox({setQuery, query, api, setWeather}) {
-  
+export default function SearchBox({setQuery, query, fetchAPI, location}) {
+
   const search = evt => {
     if(evt.key === 'Enter'){
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then(res => res.json())
-        .then(result => {
-          setWeather(result);
-          setQuery('');
-        });
+      fetchAPI();
     }
   }
-  
+
   return (
     <Container>
       <Input 
