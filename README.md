@@ -2,7 +2,7 @@
 
 https://saulocastillos.github...
 
-![alt text](./src/assets/cold-bg.jpg)
+![alt text](./src/assets/screen.png)
 
 ## 1. Como rodar localmente?
 
