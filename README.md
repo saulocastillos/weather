@@ -1,6 +1,6 @@
 # To play
 
-https://saulocastillos.github...
+https://saulocastillos.github.io/weather/
 
 ![alt text](./src/assets/screen.png)
 
