@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container, Button } from './styles';
 
-export default function ButtonBox({handleClick}) {
+export default function ButtonBox({handleClick, children = ""}) {
   return (
     <Container>
-      <Button onClick={handleClick}>Qual a temperatura agora?</Button>
+      <Button onClick={handleClick}>{children}</Button>
     </Container>
   );
 }
