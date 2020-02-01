@@ -56,7 +56,7 @@ function App() {
           location={location}
           fetchAPI={fetchAPI}
         />
-        <ButtonBox handleClick={e => handleClick()}>What's {city} temperature?</ButtonBox>  
+        <ButtonBox handleClick={e => handleClick()}>What's my location temperature?</ButtonBox>  
         {(typeof weather.main != "undefined") ? (
           <>
             <LocalizationBox 
