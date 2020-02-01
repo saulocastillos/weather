@@ -33,7 +33,8 @@ function App() {
 
   useEffect(()=>{
     async function search() {
-      const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://geolocation-db.com/jsonp/`);
+      const ip = "187.22.123.202";
+      const response = await axios.get(`https://geolocation-db.com/jsonp/${ip}`);
       const data = await JSON.parse(response.data.replace("callback(","").replace(")",""));
       setLocation(`${data.city}, ${data.country_name}`)
       setCity(data.city);
