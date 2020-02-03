@@ -31,9 +31,9 @@ function App() {
 
   useEffect(()=>{
     async function search() {
-      const ip = await (await axios.get('https://api.ipify.org?format=json')).data;
+      const ip = await axios.get('https://api.ipify.org?format=json').data;
       const response = await axios.get(`https://geolocation-db.com/jsonp/${ip}`);
-      const data = await JSON.parse(response.data.replace("callback(","").replace(")",""));
+      const data = JSON.parse(response.data.replace("callback(","").replace(")",""));
       setLocation(`${data.city}, ${data.country_name}`)
       setCity(data.city);
     } 
